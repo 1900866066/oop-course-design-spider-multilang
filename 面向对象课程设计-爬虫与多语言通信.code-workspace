@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "面向对象课程设计-爬虫与多语言通信",
+			"path": "."
+		}
+	],
+	"settings": {
+		"explorer.confirmDelete": false,
+		"chat.agent.sandbox.advanced.runtime": {
+			"enableWeakerNestedSandbox": false
+		},
+		"workbench.colorTheme": "Light 2026"
+	}
+}
