@@ -45,7 +45,7 @@ for problem in problem_list_url:
     pdescr=""
     for p in descr:
         pdescr+=p.strip()
-    pdescr = pdescr.replace('\xa0', ' ')
+    pdescr = pdescr.replace('\u2003', ' ').replace('\u2002', ' ').replace('\xa0', ' ')
     print(f"题目描述：{pdescr}")
     #输入格式
     scanf=rs.xpath("//*[@id='main_container']/div[2]/div[3]/div/div/text()")
@@ -53,6 +53,7 @@ for problem in problem_list_url:
     pscanf=""
     for p in scanf:
         pscanf+=p.strip()
+    pscanf=pscanf.replace('\u2003', ' ').replace('\u2002', ' ').replace('\xa0', ' ')
     print(f"输入格式：{pscanf}")
     #输出格式
     printf=rs.xpath("//*[@id='main_container']/div[2]/div[4]/div/div/text()")
@@ -60,6 +61,7 @@ for problem in problem_list_url:
     pprintf=""
     for p in printf:
         pprintf+=p.strip()
+    pprintf=pprintf.replace('\u2003', ' ').replace('\u2002', ' ').replace('\xa0', ' ')
     print(f"输出格式：{pprintf}")
     #输入样例
     input_sample=rs.xpath("//*[@id='main_container']/div[2]/div[5]/div/div/pre/code/text()")
@@ -67,14 +69,16 @@ for problem in problem_list_url:
     pinput_sample=""
     for p in input_sample:
         pinput_sample+=p.strip()
-        print(f"输入样例：{pinput_sample}")
+    pinput_sample=pinput_sample.replace('\u2003', ' ').replace('\u2002', ' ').replace('\xa0', ' ')
+    print(f"输入样例：{pinput_sample}")
     #输出样例
     output_sample=rs.xpath("//*[@id='main_container']/div[2]/div[6]/div/div/pre/code/text()")
     poutput_sample=""
     print(output_sample)
     for p in output_sample:
         poutput_sample+=p.strip()
-        print(f"输出样例：{poutput_sample}")
+    poutput_sample=poutput_sample.replace('\u2003', ' ').replace('\u2002', ' ').replace('\xa0', ' ')
+    print(f"输出样例：{poutput_sample}")
     #保存到湖南工程学院OJ题目.csv
     dict={"题目id":pid,"题目名字":pname,"题目描述":pdescr,"输入格式":pscanf,"输出格式":pprintf,"输入样例":pinput_sample,"输出样例":poutput_sample}
     dicts.append(dict)
